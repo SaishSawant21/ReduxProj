@@ -8,10 +8,10 @@ import {name as appName} from './app.json';
 import { Provider } from 'react-redux';
 import store from './src/Redux/Store'
 
-const appRedux = ()=>{
+const AppRedux = ()=>(
     <Provider store={store}>
         <App/>
     </Provider>
-}
+)
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => AppRedux);

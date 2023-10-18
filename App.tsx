@@ -20,13 +20,13 @@ import {
 import {
   Colors,
   DebugInstructions,
-  Header,
+
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-
 import Product from './src/Redux/Product';
+import Header from './src/Redux/Header';
 
 function App(): JSX.Element {
   
@@ -54,6 +54,7 @@ function App(): JSX.Element {
     
     
         <ScrollView >
+          <Header/>
           {
             products.map(
               (product)=><Product product={product}/>
