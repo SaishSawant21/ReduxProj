@@ -5,7 +5,7 @@ import IconBadge from 'react-native-icon-badge';
 import { useSelector } from 'react-redux';
 const Header = () =>{
     const cartItem = useSelector((state)=>state.reducer)
-     //console.log(cartItem)
+     console.log(cartItem)
     const [count,setCount] = useState(0);
     useEffect(()=>{
         setCount(cartItem.length)
