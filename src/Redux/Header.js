@@ -14,8 +14,10 @@ const Header = () =>{
     return (
 
     <View style={{backgroundColor:'black'}}>
+    <Text style={{color:'white',fontSize:24,margin:10}} >Shop</Text>
         <IconBadge style={{alignItems:'center'}}
             MainElement={
+                
          <Icon name='cart' style={{fontSize:12,textAlign:'right',color:'white', fontSize:50}} />
             }
             BadgeElement={
@@ -28,7 +30,7 @@ const Header = () =>{
             }
             Hidden={count==0}
             /> 
-            <Text style={{color:'white', textAlign:'right'}}>{count}</Text>
+            
 </View>
     )
 }

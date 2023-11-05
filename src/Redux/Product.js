@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { add_to_cart, remove_from_cart } from './Action';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import * as React from 'react';
+import { Avatar, Card} from 'react-native-paper';
 
 const Product = (props) => {
     const product= props.product;
@@ -30,19 +32,35 @@ const Product = (props) => {
         dispatch(remove_from_cart(product.id))
     }
     return(
-        <View>
-            <Text>{product.id}  </Text>
-            <Text>{product.name}</Text>
-            <Text> {product.category}</Text>
-            <Text>{product.price}</Text>
-            {
+    <View>
+
+    <Card style={{backgroundColor:'orange', margin:20}} >
+    <View style={{alignItems:'center',justifyContent:'center'}}>
+    <Card.Title title={product.name}  subtitle="Amazing Product"    />
+    </View>
+    
+    <Card.Cover source={{ uri: product.pic }} style={{margin:10}} />
+    <Card.Content>
+      
+      <Text>{product.id}  </Text>
+           
+            <Text  variant="bodyMedium" > {product.category}</Text>
+            <Text  variant="bodyMedium">{product.price}</Text>
+      
+    </Card.Content>
+    
+    <Card.Actions>
+    {
                 itemCart?
-                <Button color="black" title='Remove from Cart' onPress={()=>actionRemoveCart(product)}  />
+                <Button color="black" title='Remove from Cart' onPress={()=>actionRemoveCart(product)}  style={{marginBottom:10}}/>
                 :
                 <Button color="black" title='Add to Cart' onPress={()=>actionAddCart(product)} />
             }
-        </View>
+    </Card.Actions>
+  </Card>
+    </View>
     )
+
 }
 
 export default Product;

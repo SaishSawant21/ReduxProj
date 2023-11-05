@@ -6,7 +6,8 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+
+import GetData from './src/RestApi/GetData'
 import {
   SafeAreaView,
   ScrollView,
@@ -27,44 +28,42 @@ import {
 
 import Product from './src/Redux/Product';
 import Header from './src/Redux/Header';
+import BottomBar from './src/components/BottomBar';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Shopping from './src/screens/Shopping';
+import Home from './src/screens/Home';
+import CameraFeature from './Features/CameraFeature';
+import FileManager from './Features/FileManager';
+import ContactList from './Features/ContactList';
+import BTask from './Features/BTask';
+import Sharing from './Features/Sharing';
+
+
+const Stack = createNativeStackNavigator();
 
 function App(): JSX.Element {
   
-  const products=[
-    {
-        id:1,
-        name:'iPhone 15',
-        price:100000,
-        category:'mobile'
-    },
-    {
-      id:2,
-      name:'Nikon Camera',
-      price:10000,
-      category:'Camera'
-  },
-  {
-    id:3,
-    name:'Panasonic Tubelight',
-    price:600,
-    category:'Electronics'
+  const screenOptions = {
+    headerShown: false
 }
-]
+
   return (
     
     
-        <ScrollView >
-          <Header/>
-          {
-            products.map(
-              (product)=><Product product={product}/>
-            )
-          }
-
-        </ScrollView>
-      
-      
- 
+        
+         
+          <NavigationContainer>
+              <Stack.Navigator>
+              <Stack.Screen name="Home" component={Home} />
+              <Stack.Screen name="Shop" component={Shopping} options={screenOptions} />
+              <Stack.Screen name="Camera" component={CameraFeature} options={screenOptions} />
+              <Stack.Screen name="Fmanager" component={FileManager} options={screenOptions} />
+              <Stack.Screen name="ContactList" component={ContactList} />
+              <Stack.Screen name="Task" component={BTask}  />
+              <Stack.Screen name="Share" component={Sharing} />
+              </Stack.Navigator>
+          </NavigationContainer>
   );
 }
 
