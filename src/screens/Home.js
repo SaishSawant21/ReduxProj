@@ -35,7 +35,11 @@ const Home = ({navigation}) => {
                 onPress={() => navigation.navigate('Share')} style={{alignItems:'start',borderWidth:0.5}}
             ><Text style={{color:'black',fontSize:24, marginLeft:5}}>Share An Message</Text></TouchableOpacity>
          
-           
+         <TouchableOpacity
+                
+                onPress={() => navigation.navigate('Flex')} style={{alignItems:'start',borderWidth:0.5}}
+            ><Text style={{color:'black',fontSize:24, marginLeft:5}}>Flex</Text></TouchableOpacity>
+
     </View>
         
         

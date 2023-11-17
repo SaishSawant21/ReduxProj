@@ -38,6 +38,8 @@ import FileManager from './Features/FileManager';
 import ContactList from './Features/ContactList';
 import BTask from './Features/BTask';
 import Sharing from './Features/Sharing';
+import FlexScreen from './src/screens/FlexScreen';
+import Landing from './src/screens/Landing';
 
 
 const Stack = createNativeStackNavigator();
@@ -55,6 +57,7 @@ function App(): JSX.Element {
          
           <NavigationContainer>
               <Stack.Navigator>
+              <Stack.Screen name="Landing" component={Landing} options={screenOptions}/>
               <Stack.Screen name="Home" component={Home} />
               <Stack.Screen name="Shop" component={Shopping} options={screenOptions} />
               <Stack.Screen name="Camera" component={CameraFeature} options={screenOptions} />
@@ -62,6 +65,7 @@ function App(): JSX.Element {
               <Stack.Screen name="ContactList" component={ContactList} />
               <Stack.Screen name="Task" component={BTask}  />
               <Stack.Screen name="Share" component={Sharing} />
+              <Stack.Screen name="Flex" component={FlexScreen}/>
               </Stack.Navigator>
           </NavigationContainer>
   );
