@@ -40,6 +40,8 @@ import BTask from './Features/BTask';
 import Sharing from './Features/Sharing';
 import FlexScreen from './src/screens/FlexScreen';
 import Landing from './src/screens/Landing';
+import PassingData from './src/components/PassingData';
+import CatchData from './src/components/CatchData';
 
 
 const Stack = createNativeStackNavigator();
@@ -66,6 +68,8 @@ function App(): JSX.Element {
               <Stack.Screen name="Task" component={BTask}  />
               <Stack.Screen name="Share" component={Sharing} />
               <Stack.Screen name="Flex" component={FlexScreen}/>
+              <Stack.Screen name="PassData" component={PassingData}/>
+              <Stack.Screen name="CatchData" component={CatchData}/>
               </Stack.Navigator>
           </NavigationContainer>
   );

@@ -40,6 +40,12 @@ const Home = ({navigation}) => {
                 onPress={() => navigation.navigate('Flex')} style={{alignItems:'start',borderWidth:0.5}}
             ><Text style={{color:'black',fontSize:24, marginLeft:5}}>Flex</Text></TouchableOpacity>
 
+<TouchableOpacity
+                
+                onPress={() => navigation.navigate('PassData')} style={{alignItems:'start',borderWidth:0.5}}
+            ><Text style={{color:'black',fontSize:24, marginLeft:5}}>Pass</Text></TouchableOpacity>
+
+
     </View>
         
         
